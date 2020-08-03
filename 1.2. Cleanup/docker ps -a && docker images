@@ -1,3 +1,4 @@
+tommi@ubuntu:~$ sudo docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 tommi@ubuntu:~$ sudo docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE

@@ -1,0 +1,14 @@
+// Kun kirjoitin sudo docker stop a74, niin busybox container sammui koodilla 137 - ? Syytä en tiedä. Oppimateriaalin mukaisesti sen kuitenkin suljin
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+5d04f1d9e9f3        alpine              "/bin/sh"                10 seconds ago      Up 5 seconds                                   interesting_swartz
+a74df4dd89cb        busybox             "sh"                     7 minutes ago       Up 6 minutes                                   charming_chatelet
+b35a07d84f37        nginx               "/docker-entrypoint.…"   20 minutes ago      Exited (0) 2 minutes ago                       vigilant_mclaren
+tommi@ubuntu:~$ sudo docker stop a74
+a74
+tommi@ubuntu:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES
+5d04f1d9e9f3        alpine              "/bin/sh"                41 seconds ago      Up 36 seconds                                    interesting_swartz
+a74df4dd89cb        busybox             "sh"                     7 minutes ago       Exited (137) 8 seconds ago                       charming_chatelet
+b35a07d84f37        nginx               "/docker-entrypoint.…"   20 minutes ago      Exited (0) 2 minutes ago                         vigilant_mclaren
+tommi@ubuntu:~$

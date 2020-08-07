@@ -1,3 +1,8 @@
+TKun kirjoitin sudo docker stop a74, niin busybox container sammui koodilla 137 (Out of Memory).
+Syytä en tiedä. Toivottavasti tämä on kuitenkin OK. Oppimateriaalin mukaisesti sen kuitenkin suljin. Teen tehtäviä rasperry Pi:lle asennetulla dockerilla; ehkä tämä on syy? En vain ymmärrä, miten containerin sulkeminen voisi aiheuttaa muistin loppumisen.
+
+HUOM. Syy selvisi: se oli Rasperry Pi 3:sen 32bit arkkitehtuuri, joka aiheutti nämä ongelmat.
+
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
 5d04f1d9e9f3        alpine              "/bin/sh"                10 seconds ago      Up 5 seconds                                   interesting_swartz
 a74df4dd89cb        busybox             "sh"                     7 minutes ago       Up 6 minutes                                   charming_chatelet

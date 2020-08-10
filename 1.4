@@ -1,0 +1,17 @@
+tommi@DESKTOP-6BTVUJL:~$ sudo docker run devopsdockeruh/exec_bash_exercise
+
+tommi@DESKTOP-6BTVUJL:~$ sudo docker container ls -a
+CONTAINER ID        IMAGE                               COMMAND                  CREATED             STATUS              PORTS               NAMES
+6661849f8b34        devopsdockeruh/exec_bash_exercise   "docker-entrypoint.s…"   2 minutes ago       Up About a minute                       magical_proskuriakova
+
+tommi@DESKTOP-6BTVUJL:~$ sudo docker exec -it magical_proskuriakova bash
+root@6661849f8b34:/usr/app# tail -f ./logs.txt
+Secret message is:
+"Docker is easy"
+Mon, 10 Aug 2020 18:33:52 GMT
+Mon, 10 Aug 2020 18:33:55 GMT
+Mon, 10 Aug 2020 18:33:58 GMT
+Mon, 10 Aug 2020 18:34:01 GMT
+
+Secret message is:
+"Docker is easy"

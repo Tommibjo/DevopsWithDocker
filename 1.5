@@ -1,0 +1,25 @@
+tommi@DESKTOP-6BTVUJL:~$ sudo docker run -d -it ubuntu sh -c 'apt-get install curl; echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+e5ad8efc6d3b24d167513a2d5e07ab9028bc37b9d99fbccc6268c27253b5d854
+tommi@DESKTOP-6BTVUJL:~$ sudo docker container ls -a
+CONTAINER ID        IMAGE               COMMAND                   CREATED              STATUS                            PORTS               NAMES
+e5ad8efc6d3b        ubuntu              "sh -c 'echo \"Input …"   4 seconds ago        Up 2 seconds                                          pedantic_cohen
+
+tommi@DESKTOP-6BTVUJL:~$ sudo docker exec -it pedantic_cohen bash
+root@e5ad8efc6d3b:/# apt-get update
+.....
+root@e5ad8efc6d3b:/# apt-get install curl
+.....
+root@e5ad8efc6d3b:/# exit
+tommi@DESKTOP-6BTVUJL:~$ sudo docker stop e5a
+e5a
+tommi@DESKTOP-6BTVUJL:~$ sudo docker start -i e5a
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>

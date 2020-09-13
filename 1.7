@@ -1,0 +1,22 @@
+//=======SCRIPTFILE======
+
+#Scriptfile
+#!/bin/bash
+echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;
+
+
+//=======DOCKERFILE======
+
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get install curl -y wget
+WORKDIR /scriptdir
+COPY scriptfile .
+RUN chmod 755 scriptfile
+
+CMD ["/scriptdir/scriptfile"]
+
+
+//=======COMMAND USED TO RUN THE CONTAINER======
+
+sudo docker run -it curler

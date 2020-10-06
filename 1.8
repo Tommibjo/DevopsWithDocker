@@ -1,0 +1,7 @@
+tommi@DESKTOP-6BTVUJL:/home/dockerExercise/testailu-alue$ sudo nano logs.txt
+tommi@DESKTOP-6BTVUJL:/home/dockerExercise/testailu-alue$ ls -a
+.  ..  Dockerfile  logs.txt
+tommi@DESKTOP-6BTVUJL:/home/dockerExercise/testailu-alue$ sudo docker run --rm -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt

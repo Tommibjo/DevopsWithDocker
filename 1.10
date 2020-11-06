@@ -1,0 +1,18 @@
+FROM node:13.12.0-alpine
+
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install
+
+ARG URL
+ENV URL ${API_URL:-http://localhost:8000}
+COPY . ./
+
+RUN npm run build
+
+CMD ["npx","serve", "-s", "-l", "5000", "dist"]
+
+USER node
+EXPOSE 5000
